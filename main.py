@@ -6,8 +6,8 @@ import shutil
 
 PATH: str = 'Output'
 ITERATION_MAX = 15624
-IMAGE_X = 25 #cool
-IMAGE_Y = 25
+IMAGE_X = 75 #cool
+IMAGE_Y = 75
 
 
 class NFT:
