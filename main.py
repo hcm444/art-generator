@@ -143,7 +143,7 @@ def clear():
 
 clear()
 # clear files
-generate_random(4)
+generate_random(1)
 # generate ten random images
 output()
 # print the generated files

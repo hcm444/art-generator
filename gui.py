@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter.messagebox import showinfo
 
+from main import generate, show, clear, generate_random, generate_all
 
 # root window
 root = tk.Tk()
@@ -11,28 +12,124 @@ root.title('github.com/hcm444')
 
 
 # download button handler
-def download_clicked():
+def show_clicked():
+    show()
     showinfo(
         title='Information',
-        message='Download button clicked!'
+        message='Show button clicked!'
     )
 
 
-download_icon = tk.PhotoImage(file='./assets/download.png')
+def generate_clicked():
+    generate(1, 1, 1, 1, 1, 2)
+    showinfo(
+        title='Information',
+        message='Generate button clicked!'
+    )
 
-download_button = ttk.Button(
+
+def generate_all_clicked():
+    generate_all()
+    showinfo(
+        title='Information',
+        message='Generate All button clicked!'
+    )
+
+
+def generate_random_clicked():
+    generate_random(1)
+    showinfo(
+        title='Information',
+        message='Generate Random button clicked!'
+    )
+
+
+def clear_clicked():
+    clear()
+    showinfo(
+        title='Information',
+        message='Clear button clicked!'
+    )
+
+
+show_icon = tk.PhotoImage(file='assets/show.png')
+
+generate_icon = tk.PhotoImage(file='./assets/generate.png')
+
+generate_all_icon = tk.PhotoImage(file='./assets/generate_all.png')
+
+generate_random_icon = tk.PhotoImage(file='./assets/generate_random.png')
+
+clear_icon = tk.PhotoImage(file='assets/clear.png')
+
+show_button = ttk.Button(
     root,
-    image=download_icon,
-    text='Download',
+    image=show_icon,
+    text='Show',
     compound=tk.LEFT,
-    command=download_clicked
+    command=show_clicked
 )
 
-download_button.pack(
+generate_button = ttk.Button(
+    root,
+    image=generate_icon,
+    text='Generate',
+    compound=tk.LEFT,
+    command=generate_clicked
+)
+
+generate_all_button = ttk.Button(
+    root,
+    image=generate_all_icon,
+    text='Generate All',
+    compound=tk.LEFT,
+    command=generate_all_clicked
+)
+
+generate_random_button = ttk.Button(
+    root,
+    image=generate_random_icon,
+    text='Generate Random',
+    compound=tk.LEFT,
+    command=generate_random_clicked
+)
+
+clear_button = ttk.Button(
+    root,
+    image=clear_icon,
+    text='Clear',
+    compound=tk.LEFT,
+    command=clear_clicked
+)
+
+show_button.pack(
     ipadx=5,
     ipady=5,
-    expand=True
+    expand=False
 )
 
+generate_button.pack(
+    ipadx=5,
+    ipady=5,
+    expand=False
+)
+
+generate_all_button.pack(
+    ipadx=5,
+    ipady=5,
+    expand=False
+)
+
+generate_random_button.pack(
+    ipadx=5,
+    ipady=5,
+    expand=False
+)
+
+clear_button.pack(
+    ipadx=5,
+    ipady=5,
+    expand=False
+)
 
 root.mainloop()
