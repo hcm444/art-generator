@@ -2,12 +2,15 @@ from itertools import product
 import random
 from PIL import Image
 import os
+from os import listdir
 import shutil
 
 PATH: str = 'Output'
 ITERATION_MAX = 15624
 IMAGE_X = 75  # cool
 IMAGE_Y = 75
+
+image_list = []
 
 
 class NFT:
@@ -40,8 +43,6 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
     num_array = [attr0, attr1, attr2, attr3, attr4, attr5]
     desc_array = [body_value, eyes_value, mouth_value, nose_value, background_value, extra_value]
     # print both arrays to console
-    print(str(desc_array))
-    print(num_array)
     # Open the images including the body
     attr0 = Image.open('assets/Body/{0}.png'.format(str(attr0)))
     attr1 = Image.open('assets/Eyes/{0}.png'.format(str(attr1)))
@@ -65,8 +66,9 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
                                                                          body_value,
                                                                          eyes_value, mouth_value, nose_value,
                                                                          background_value, extra_value), "PNG")
+    image_list.append(resized_img)
 
-    return
+    return image_list
 
 
 def generate_all():
@@ -106,6 +108,11 @@ def generate_random(generation_val):
         # remember how many permutations you have! ex: 5x5x5x5x5 = 3125 files!
 
 
+def output():
+    for images in os.listdir(PATH):
+        if images.endswith(".png"):
+            print(images)
+
 def find(attribute):
     # search by attribute
     result = []
@@ -138,4 +145,5 @@ def clear():
 
 
 clear()
-generate_random(1)
+generate_random(10)
+output()
