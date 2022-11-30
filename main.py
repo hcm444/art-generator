@@ -16,7 +16,6 @@ GEN_ARR = (list(product([1, 2, 3, 4, 5],
                         [1, 2, 3, 4, 5],
                         [1, 2, 3, 4, 5],
                         [1, 2, 3, 4, 5])))
-image_list = []
 
 
 class NFT:
@@ -71,8 +70,6 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
                                                                          body_value,
                                                                          eyes_value, mouth_value, nose_value,
                                                                          background_value, extra_value), "PNG")
-    image_list.append(resized_img)
-    return image_list
 
 
 def generate_all():
@@ -146,8 +143,8 @@ def clear():
 
 clear()
 # clear files
-generate_random(4000)
+generate_random(4)
 # generate ten random images
 output()
 # print the generated files
-generate_all()
+
