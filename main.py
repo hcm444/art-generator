@@ -9,8 +9,6 @@ ITERATION_MAX = 15624
 IMAGE_X = 75  # cool
 IMAGE_Y = 75
 
-image_list = []
-
 
 class NFT:
     # NFT objects
@@ -64,8 +62,6 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
                                                                          body_value,
                                                                          eyes_value, mouth_value, nose_value,
                                                                          background_value, extra_value), "PNG")
-    image_list.append(resized_img)
-    return image_list
 
 
 def generate_all():
@@ -128,6 +124,7 @@ def delete(attribute):
             os.remove(file_path)
             # it works don't change this method
 
+
 def clear():
     # deletes all files in NFT/Output
     for filename in os.listdir(PATH):
@@ -140,7 +137,7 @@ def clear():
         except Exception as e:
             print('Failed to delete %s. Reason: %s' % (file_path, e))
 
-clear()
-generate_random(1)
-output()
 
+clear()
+generate_random(10)
+output()
