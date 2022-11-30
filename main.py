@@ -2,7 +2,6 @@ from itertools import product
 import random
 from PIL import Image
 import os
-from os import listdir
 import shutil
 
 PATH: str = 'Output'
@@ -42,7 +41,6 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
     # numer array and description array
     num_array = [attr0, attr1, attr2, attr3, attr4, attr5]
     desc_array = [body_value, eyes_value, mouth_value, nose_value, background_value, extra_value]
-    # print both arrays to console
     # Open the images including the body
     attr0 = Image.open('assets/Body/{0}.png'.format(str(attr0)))
     attr1 = Image.open('assets/Eyes/{0}.png'.format(str(attr1)))
@@ -67,7 +65,6 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
                                                                          eyes_value, mouth_value, nose_value,
                                                                          background_value, extra_value), "PNG")
     image_list.append(resized_img)
-
     return image_list
 
 
@@ -113,6 +110,7 @@ def output():
         if images.endswith(".png"):
             print(images)
 
+
 def find(attribute):
     # search by attribute
     result = []
@@ -130,7 +128,6 @@ def delete(attribute):
             os.remove(file_path)
             # it works don't change this method
 
-
 def clear():
     # deletes all files in NFT/Output
     for filename in os.listdir(PATH):
@@ -143,7 +140,7 @@ def clear():
         except Exception as e:
             print('Failed to delete %s. Reason: %s' % (file_path, e))
 
-
 clear()
-generate_random(10)
+generate_random(1)
 output()
+
