@@ -1,6 +1,6 @@
 ## art
 
-NFT artwork generation
+NFT artwork generation.
 
 ## generate(1,2,3,4,3,1)
 
@@ -19,17 +19,15 @@ Generates 4 random images and saves them in /Output.
 
 ## generate_all()
 
-Generates all permutations of images and saves them in /Output
-
-etc...
+Generates all permutations of images and saves them in /Output.
 
 ## clear
 
-Deletes all files in /Output
+Deletes all files in /Output.
 
 ## output()
 
-Prints the names of .png files in /Output
+Prints the names of .png files in /Output.
 ```
 /usr/local/bin/python3.10 /Users/hcm444/PycharmProjects/art/main.py 
 242154_green_tired_smirk_crooked_morning_chest.png
@@ -41,3 +39,14 @@ Process finished with exit code 0
 
 ```
 
+## find(attribute)
+
+Search by attribute.
+
+## delete(attribute)
+
+Delete by attribute.
+
+## show()
+
+Display images in /Output.
