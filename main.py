@@ -72,7 +72,6 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
                                                                          background_value, extra_value), "PNG")
 
 
-
 def generate_all():
     # five arrays for every attribute
     # M is a list of every possible tuple
@@ -144,9 +143,8 @@ def clear():
 
 clear()
 # clear files
-generate_random(1)
+generate_random(4)
 # generate ten random images
 output()
 # print the generated files
-show()
 
