@@ -4,10 +4,13 @@ from PIL import Image
 import os
 import shutil
 
+from matplotlib import pyplot as plt
+
 PATH: str = 'Output'
-ITERATION_MAX = 15624
-IMAGE_X = 75  # cool
+ITERATION_MAX = 15624  # max permutations
+IMAGE_X = 75  # image size
 IMAGE_Y = 75
+image_list = []
 
 
 class NFT:
@@ -62,6 +65,8 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
                                                                          body_value,
                                                                          eyes_value, mouth_value, nose_value,
                                                                          background_value, extra_value), "PNG")
+    image_list.append(resized_img)
+    return image_list
 
 
 def generate_all():
@@ -79,6 +84,13 @@ def generate_all():
         NFT(generation_arr[counter][0], generation_arr[counter][1], generation_arr[counter][2],
             generation_arr[counter][3], generation_arr[counter][4], generation_arr[counter][5])
         # remember how many permutations you have! ex: 5x5x5x5x5 = 3125 files!
+
+
+def show():
+    for files in os.listdir(PATH):
+        im = Image.open('{0}/{1}'.format(PATH, files))
+        plt.imshow(im)
+        plt.show()
 
 
 def generate_random(generation_val):
@@ -137,7 +149,11 @@ def clear():
         except Exception as e:
             print('Failed to delete %s. Reason: %s' % (file_path, e))
 
-
 clear()
+# clear files
 generate_random(10)
+# generate ten random images
 output()
+# print the generated files
+show()
+
