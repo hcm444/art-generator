@@ -6,7 +6,7 @@ import shutil
 
 PATH: str = 'Output'
 ITERATION_MAX = 15624
-IMAGE_X = 75 #cool
+IMAGE_X = 75  # cool
 IMAGE_Y = 75
 
 
@@ -60,10 +60,11 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
     # save name as attributes number _ properties.png, so I can easily perform data analysis.
     resized_img.save(
         'Output/{0}{1}{2}{3}{4}{5}_{6}_{7}_{8}_{9}_{10}_{11}.png'.format(str(num_array[0]), str(num_array[1]),
-                                                                    str(num_array[2]), str(num_array[3]),
-                                                                    str(num_array[4]), str(num_array[5]), body_value,
-                                                                    eyes_value, mouth_value, nose_value,
-                                                                    background_value, extra_value), "PNG")
+                                                                         str(num_array[2]), str(num_array[3]),
+                                                                         str(num_array[4]), str(num_array[5]),
+                                                                         body_value,
+                                                                         eyes_value, mouth_value, nose_value,
+                                                                         background_value, extra_value), "PNG")
 
     return
 
@@ -137,4 +138,4 @@ def clear():
 
 
 clear()
-generate_random(100)
+generate_random(1)
