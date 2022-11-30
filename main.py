@@ -10,6 +10,12 @@ PATH: str = 'Output'
 ITERATION_MAX = 15624  # max permutations
 IMAGE_X = 75  # image size
 IMAGE_Y = 75
+GEN_ARR = (list(product([1, 2, 3, 4, 5],
+                        [1, 2, 3, 4, 5],
+                        [1, 2, 3, 4, 5],
+                        [1, 2, 3, 4, 5],
+                        [1, 2, 3, 4, 5],
+                        [1, 2, 3, 4, 5])))
 image_list = []
 
 
@@ -71,36 +77,17 @@ def generate(attr0, attr1, attr2, attr3, attr4, attr5):
 
 def generate_all():
     # five arrays for every attribute
-    generation_arr = (list(product([1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5])))
     # M is a list of every possible tuple
-    for counter in range(generation_arr.__len__()):
+    for counter in range(GEN_ARR.__len__()):
         # parse through these tuples
         # save every respective place of the tuple for generate()
-        NFT(generation_arr[counter][0], generation_arr[counter][1], generation_arr[counter][2],
-            generation_arr[counter][3], generation_arr[counter][4], generation_arr[counter][5])
+        NFT(GEN_ARR[counter][0], GEN_ARR[counter][1], GEN_ARR[counter][2],
+            GEN_ARR[counter][3], GEN_ARR[counter][4], GEN_ARR[counter][5])
         # remember how many permutations you have! ex: 5x5x5x5x5 = 3125 files!
-
-
-def show():
-    for files in os.listdir(PATH):
-        im = Image.open('{0}/{1}'.format(PATH, files))
-        plt.imshow(im)
-        plt.show()
 
 
 def generate_random(generation_val):
     # five arrays for every attribute
-    generation_arr = (list(product([1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5],
-                                   [1, 2, 3, 4, 5])))
     # M is a list of every possible tuple
     for counter in range(generation_val):
         # generate a number of random NFTs
@@ -108,8 +95,8 @@ def generate_random(generation_val):
         # random integer from beginning to end of possible iterations
         # parse through these tuples
         # save every respective place of the tuple for generate()
-        NFT(generation_arr[counter][0], generation_arr[counter][1], generation_arr[counter][2],
-            generation_arr[counter][3], generation_arr[counter][4], generation_arr[counter][5])
+        NFT(GEN_ARR[counter][0], GEN_ARR[counter][1], GEN_ARR[counter][2],
+            GEN_ARR[counter][3], GEN_ARR[counter][4], GEN_ARR[counter][5])
         # remember how many permutations you have! ex: 5x5x5x5x5 = 3125 files!
 
 
@@ -137,6 +124,13 @@ def delete(attribute):
             # it works don't change this method
 
 
+def show():
+    for files in os.listdir(PATH):
+        im = Image.open('{0}/{1}'.format(PATH, files))
+        plt.imshow(im)
+        plt.show()
+
+
 def clear():
     # deletes all files in NFT/Output
     for filename in os.listdir(PATH):
@@ -149,11 +143,11 @@ def clear():
         except Exception as e:
             print('Failed to delete %s. Reason: %s' % (file_path, e))
 
+
 clear()
 # clear files
-generate_random(10)
+generate_random(4000)
 # generate ten random images
 output()
 # print the generated files
-show()
-
+generate_all()
