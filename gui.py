@@ -6,7 +6,7 @@ from main import generate, show, clear, generate_random, generate_all
 
 # root window
 root = tk.Tk()
-root.geometry('500x500')
+root.geometry('750x100')
 root.resizable(False, False)
 root.title('github.com/hcm444')
 
@@ -105,31 +105,37 @@ clear_button = ttk.Button(
 show_button.pack(
     ipadx=5,
     ipady=5,
-    expand=False
+    expand=True,
+    side=tk.LEFT,
+
 )
 
 generate_button.pack(
     ipadx=5,
     ipady=5,
-    expand=False
+    expand=True,
+    side=tk.LEFT,
 )
 
 generate_all_button.pack(
     ipadx=5,
     ipady=5,
-    expand=False
+    expand=True,
+    side=tk.LEFT,
 )
 
 generate_random_button.pack(
     ipadx=5,
     ipady=5,
-    expand=False
+    expand=True,
+    side=tk.LEFT,
 )
 
 clear_button.pack(
     ipadx=5,
     ipady=5,
-    expand=False
+    expand=True,
+    side=tk.LEFT,
 )
 
 root.mainloop()
