@@ -8,8 +8,8 @@ from matplotlib import pyplot as plt
 
 PATH: str = 'Output'
 ITERATION_MAX = 15624  # max permutations
-IMAGE_X = 75  # image size
-IMAGE_Y = 75
+IMAGE_X = 25  # image size
+IMAGE_Y = 25
 GEN_ARR = (list(product([1, 2, 3, 4, 5],
                         [1, 2, 3, 4, 5],
                         [1, 2, 3, 4, 5],
@@ -143,7 +143,7 @@ def clear():
 
 clear()
 # clear files
-generate_random(1)
+generate_random(500)
 # generate ten random images
 output()
 # print the generated files
