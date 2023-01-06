@@ -8,8 +8,6 @@ The code creates a class called NFT which takes in six attributes, attr0 through
 
 The generate function first maps the values of the attributes to corresponding descriptions using lists. It then opens the images corresponding to the attribute values using the Pillow library's open function and combines them using the paste function. The resulting image is then resized using the resize function and saved to the 'Output' directory.
 
-The ITERATION_MAX variable is set to 15624, which is the maximum number of permutations of the six attributes, which are all 5-element lists. The GEN_ARR list is created as the list of all permutations of the six attributes. The main function generates NFT objects for all the permutations in GEN_ARR.
-
 ## generate(1,2,3,4,3,1)
 
 Generates a specific image.
