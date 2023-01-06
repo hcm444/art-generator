@@ -56,7 +56,6 @@ class NFTApp:
         attr4 = random.randint(1, 5)
         attr5 = random.randint(1, 5)
         NFT(attr0, attr1, attr2, attr3, attr4, attr5)
-        messagebox.showinfo('Success', 'NFT generated successfully!')
         self.update_image_list()
 
     def delete_nft(self):
@@ -64,7 +63,6 @@ class NFTApp:
         file_path = filedialog.askopenfilename(initialdir='Output')
         if file_path:
             os.remove(file_path)
-        messagebox.showinfo('Success', 'NFT deleted successfully!')
         self.update_image_list()
 
     def prev_nft(self):
