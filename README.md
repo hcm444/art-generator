@@ -8,8 +8,6 @@ This code is generating NFT art by combining different images and then saving th
 
 The code creates a class called NFT which takes in six attributes, attr0 through attr5, in its initialization. The NFT class has a __str__ method which returns the string representation of the object, which is the concatenation of the six attributes. The NFT object also calls the generate function, which generates and saves the NFT art by combining and resizing the images and saving them to the 'Output' directory.
 
-The generate function first maps the values of the attributes to corresponding descriptions using lists. It then opens the images corresponding to the attribute values using the Pillow library's open function and combines them using the paste function. The resulting image is then resized using the resize function and saved to the 'Output' directory.
-
 ![cool](https://user-images.githubusercontent.com/32826270/210976583-fd2d1ad2-18eb-4243-b8e3-bc7220f0bf35.png)
 
 # Generate
