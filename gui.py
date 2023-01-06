@@ -100,6 +100,7 @@ class NFTApp:
         self.image_label.config(image=image)
         self.image_label.image = image
 
+
 def main():
     root = tk.Tk()
     app = NFTApp(root)
