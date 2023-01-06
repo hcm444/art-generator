@@ -9,3 +9,18 @@ The code creates a class called NFT which takes in six attributes, attr0 through
 The generate function first maps the values of the attributes to corresponding descriptions using lists. It then opens the images corresponding to the attribute values using the Pillow library's open function and combines them using the paste function. The resulting image is then resized using the resize function and saved to the 'Output' directory.
 
 ![output](https://user-images.githubusercontent.com/32826270/210912088-f77e66f3-2955-47f3-a572-1eac57c8d8a3.png)
+
+# Generate
+Generates a new NFT object and saves it to the Output directory
+
+# Delete
+Deletes an NFT object from the Output directory
+
+# Previous
+Displays the previous NFT image in the Output directory
+
+# Next
+Displays the next NFT image in the Output directory
+
+# View
+Views an NFT object from the Output directory
