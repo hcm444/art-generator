@@ -27,6 +27,9 @@ Generates 4 random images and saves them in /Output.
 
 Generates all permutations of images and saves them in /Output.
 
+![output](https://user-images.githubusercontent.com/32826270/210912088-f77e66f3-2955-47f3-a572-1eac57c8d8a3.png)
+
+
 ## clear
 
 Deletes all files in /Output.
